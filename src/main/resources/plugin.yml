@@ -1,0 +1,4 @@
+name: LiveAlerts
+version: '${project.version}'
+main: plugin.livealerts.LiveAlerts
+api-version: 1.19
