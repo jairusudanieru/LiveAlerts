@@ -2,3 +2,7 @@ name: LiveAlerts
 version: '${project.version}'
 main: plugin.livealerts.LiveAlerts
 api-version: 1.19
+commands:
+  livealerts:
+    description: Live Alerts main command
+    usage: /livealerts (set|help)

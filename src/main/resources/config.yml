@@ -4,23 +4,23 @@
 
 # The platform you'll be streaming on
 # You can set this to: "twitch","youtube","facebook"
-streamingPlatform: "twitch"
+streamingPlatform: twitch
 
 # The minecraft username of the streamer
 # This will only be used if "streamerOnly" is selected as the audienceType
-streamerUsername: "player"
+streamerUsername: player
 
 # Your socket token can be found in your streamlabs dashboard
 # If you change the value of this option, please restart your server instead of reloading
-socketToken: "yourSocketToken"
+socketToken: yourSocketToken
 
 # The message type of your live stream alerts
 # You can choose the following message types: "broadcast","bossBar","actionBar"
-messageType: "broadcast"
+messageType: broadcast
 
 # Which players can see your live stream alerts
 # You can choose the following: "everyone","streamerOnly"
-audienceType: "everyone"
+audienceType: everyone
 
 # The messages for your stream events
 # Leave the message empty to disable
@@ -29,11 +29,11 @@ audienceType: "everyone"
 # %name% - for the user who triggered the event [all]
 # %amount% - for the amount the user have sent [stars only]
 facebook:
-  followMessage: "%name% followed the page!"
-  likeMessage: "%name% liked the stream!"
-  shareMessage: "%name% shared the stream!"
-  starsMessage: "%name% sent %amount% stars!"
-  supportMessage: "%name% became a supporter!"
+  followMessage: '%name% followed the page!'
+  likeMessage: '%name% liked the stream!'
+  shareMessage: '%name% shared the stream!'
+  starsMessage: '%name% sent %amount% stars!'
+  supportMessage: '%name% became a supporter!'
 
 # Twitch's events messages
 # You can use the following placeholders:
@@ -41,19 +41,19 @@ facebook:
 # %amount% - for the amount the user have sent [bits only]
 # %raiders% - for the numbers of raiders [raid only]
 twitch:
-  bitsMessage: "%name% cheered! x%amount%!"
-  followMessage: "%name% is now following!"
-  raidMessage: "%name% is raiding with a party of %raiders%!"
-  subscriptionMessage: "%name% just subscribed!"
+  bitsMessage: '%name% cheered! x%amount%!'
+  followMessage: '%name% is now following!'
+  raidMessage: '%name% is raiding with a party of %raiders%!'
+  subscriptionMessage: '%name% just subscribed!'
 
 # YouTube's events messages
 # You can use the following placeholders:
 # %name% - for the user who triggered the event [all]
 # %amount% - for the amount the user have sent [superchat only]
 youtube:
-  channelMemberMessage: "%name% has become a member!"
-  subscribeMessage: "%name% just subscribed!"
-  superChatMessage: "%name% donated %amount% through super chat!"
+  channelMemberMessage: '%name% has become a member!'
+  subscribeMessage: '%name% just subscribed!'
+  superChatMessage: '%name% donated %amount% through super chat!'
 
 
 

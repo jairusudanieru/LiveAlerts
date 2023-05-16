@@ -1,4 +1,4 @@
-package plugin.livealerts.Options;
+package plugin.livealerts.Utilities;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;

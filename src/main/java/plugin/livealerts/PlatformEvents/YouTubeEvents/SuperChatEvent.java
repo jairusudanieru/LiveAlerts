@@ -1,7 +1,7 @@
 package plugin.livealerts.PlatformEvents.YouTubeEvents;
 
 import org.bukkit.plugin.java.JavaPlugin;
-import plugin.livealerts.Options.MessageType;
+import plugin.livealerts.Utilities.MessageType;
 
 public class SuperChatEvent {
 

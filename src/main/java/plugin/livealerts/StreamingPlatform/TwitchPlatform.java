@@ -17,10 +17,10 @@ public class TwitchPlatform {
 
     public void onTwitchEvent(JavaPlugin plugin) {
         Socket socket;
-        String socketToken = plugin.getConfig().getString("socketToken");
-        if (socketToken == null || socketToken.isEmpty()) return;
+        String token = plugin.getConfig().getString("socketToken");
+        if (token == null || token.isEmpty() || token.equalsIgnoreCase("yourSocketToken")) return;
         try {
-            socket = IO.socket("https://sockets.streamlabs.com?token=" + socketToken);
+            socket = IO.socket("https://sockets.streamlabs.com?token=" + token);
         } catch (Exception error) {
             Bukkit.getLogger().severe("[LiveAlerts] Failed to create socket: " + error.getMessage());
             Bukkit.getLogger().info("[LiveAlerts] Disabling plugin...");
@@ -58,6 +58,7 @@ public class TwitchPlatform {
             }
         });
         socket.connect();
+        Bukkit.getLogger().info("[LiveAlerts] Socket connected to Twitch!");
         Bukkit.getLogger().info("[LiveAlerts] Plugin successfully enabled!");
     }
 }
