@@ -20,11 +20,13 @@ public class SendBroadcast {
         if (audience.equalsIgnoreCase("everyone")) {
             TextComponent component = Component.text(message);
             server.broadcast(component);
+            Bukkit.getLogger().info(message);
         } else if (audience.equalsIgnoreCase("streamerOnly")) {
             if (streamer == null) return;
             Player player = Bukkit.getPlayerExact(streamer);
             if (player == null || !player.isOnline()) return;
             player.sendMessage(message);
+            Bukkit.getLogger().info(message);
         } else {
             Bukkit.getLogger().severe("[LiveAlerts] The \"" + audience + "\" audience type is invalid!");
             Bukkit.getLogger().severe("[LiveAlerts] Audience types: \"everyone\",\"streamerOnly\"!");

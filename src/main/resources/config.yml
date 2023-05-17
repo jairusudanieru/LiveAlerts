@@ -26,6 +26,10 @@ bossBarColor: white
 # You can choose the following: "everyone","streamerOnly"
 audienceType: everyone
 
+# Whether to enable sound on alerts
+# Set this to true or false
+soundOnAlert: true
+
 # The messages for your stream events
 # Leave the message empty to disable
 # Facebook's events messages

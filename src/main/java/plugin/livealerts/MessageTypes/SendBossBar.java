@@ -59,6 +59,7 @@ public class SendBossBar {
                 }
             }, 20L, 20L);
         }
+        Bukkit.getLogger().info(message);
     }
 
     //If the audience type is streamerOnly, this void will run
@@ -78,6 +79,7 @@ public class SendBossBar {
                 bossBar.removeAll();
             }
         }, 20L, 20L);
+        Bukkit.getLogger().info(message);
     }
 
     //Using the bossBar to send the event message
