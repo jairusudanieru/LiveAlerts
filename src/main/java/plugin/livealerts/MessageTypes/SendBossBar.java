@@ -9,15 +9,43 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class SendBossBar {
 
-    public void checkBarColor(JavaPlugin plugin) {
+    //Getting the config bossBarColor and setting it as the bossBarColor
+    public BarColor checkBarColor(JavaPlugin plugin) {
+        BarColor bossBarColor;
         String barColor = plugin.getConfig().getString("bossBarColor");
         if (barColor == null || barColor.isEmpty()) barColor = "white";
+        //Checking the bar color;
+        switch (barColor) {
+            case "blue":
+                bossBarColor = BarColor.BLUE;
+                break;
+            case "green":
+                bossBarColor = BarColor.GREEN;
+                break;
+            case "pink":
+                bossBarColor = BarColor.PINK;
+                break;
+            case "purple":
+                bossBarColor = BarColor.PURPLE;
+                break;
+            case "red":
+                bossBarColor = BarColor.RED;
+                break;
+            case "yellow":
+                bossBarColor = BarColor.YELLOW;
+                break;
+            default:
+                bossBarColor = BarColor.WHITE;
+                break;
+        }
+        return bossBarColor;
     }
 
     //If the audience type is everyone, this void will run
     public void everyone(JavaPlugin plugin, String message) {
+        BarColor barColor = checkBarColor(plugin);
         for (Player player : Bukkit.getOnlinePlayers()) {
-            BossBar bossBar = Bukkit.createBossBar(message, BarColor.WHITE, BarStyle.SEGMENTED_10);
+            BossBar bossBar = Bukkit.createBossBar(message, barColor, BarStyle.SEGMENTED_10);
             bossBar.addPlayer(player);
             bossBar.setProgress(1.0);
             bossBar.setVisible(true);
@@ -35,8 +63,9 @@ public class SendBossBar {
 
     //If the audience type is streamerOnly, this void will run
     public void streamerOnly(JavaPlugin plugin, String message, Player player) {
+        BarColor barColor = checkBarColor(plugin);
         if (player == null || !player.isOnline()) return;
-        BossBar bossBar = Bukkit.createBossBar(message, BarColor.WHITE, BarStyle.SEGMENTED_10);
+        BossBar bossBar = Bukkit.createBossBar(message, barColor, BarStyle.SEGMENTED_10);
         bossBar.addPlayer(player);
         bossBar.setProgress(1.0);
         bossBar.setVisible(true);

@@ -18,6 +18,10 @@ socketToken: yourSocketToken
 # You can choose the following message types: "broadcast","bossBar","actionBar"
 messageType: broadcast
 
+# The color of the bossBar if the messageType is set to "bossBar"
+# You can use the following bossBar colors: "blue","green","pink","purple","red","white","yellow"
+bossBarColor: white
+
 # Which players can see your live stream alerts
 # You can choose the following: "everyone","streamerOnly"
 audienceType: everyone
