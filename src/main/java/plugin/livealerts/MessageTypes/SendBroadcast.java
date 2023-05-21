@@ -6,8 +6,11 @@ import org.bukkit.Bukkit;
 import org.bukkit.Server;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+import plugin.livealerts.Utilities.SoundAlert;
 
 public class SendBroadcast {
+
+    SoundAlert soundAlert = new SoundAlert();
 
     //Using the broadcast to send the event message
     public void sendBroadcast(JavaPlugin plugin, String message) {
@@ -20,12 +23,14 @@ public class SendBroadcast {
         if (audience.equalsIgnoreCase("everyone")) {
             TextComponent component = Component.text(message);
             server.broadcast(component);
+            soundAlert.onEveryone(plugin);
             Bukkit.getLogger().info(message);
         } else if (audience.equalsIgnoreCase("streamerOnly")) {
             if (streamer == null) return;
             Player player = Bukkit.getPlayerExact(streamer);
             if (player == null || !player.isOnline()) return;
             player.sendMessage(message);
+            soundAlert.onStreamerOnly(plugin);
             Bukkit.getLogger().info(message);
         } else {
             Bukkit.getLogger().severe("[LiveAlerts] The \"" + audience + "\" audience type is invalid!");

@@ -6,8 +6,11 @@ import org.bukkit.boss.BarStyle;
 import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
+import plugin.livealerts.Utilities.SoundAlert;
 
 public class SendBossBar {
+
+    SoundAlert soundAlert = new SoundAlert();
 
     //Getting the config bossBarColor and setting it as the bossBarColor
     public BarColor checkBarColor(JavaPlugin plugin) {
@@ -59,6 +62,7 @@ public class SendBossBar {
                 }
             }, 20L, 20L);
         }
+        soundAlert.onEveryone(plugin);
         Bukkit.getLogger().info(message);
     }
 
@@ -79,6 +83,7 @@ public class SendBossBar {
                 bossBar.removeAll();
             }
         }, 20L, 20L);
+        soundAlert.onStreamerOnly(plugin);
         Bukkit.getLogger().info(message);
     }
 
